@@ -1,0 +1,37 @@
+.navbar {
+    background-color:   white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 27px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    color: rgb(101, 101, 101);
+    font-size: 24px;
+}
+
+.navLinks {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navLinks li {
+    cursor: pointer;
+    position: relative;
+    margin-left: 20px; 
+}
+
+.navLinks a {
+    color: rgb(101, 101, 101);
+    text-decoration: none;
+    font-size: 16px; 
+}
+
+.navLinks a:hover {
+    text-decoration: underline;
+    transition: background-color 0.3s;
+}
