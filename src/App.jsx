@@ -1,5 +1,6 @@
 import Proverbios from "./components/Proverbios";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App(){
 
@@ -7,6 +8,7 @@ function App(){
     <>
       <Navbar></Navbar>
       <Proverbios></Proverbios>
+      <Footer></Footer>
     </>
 
   )

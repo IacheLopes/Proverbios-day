@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import styles from './proverbios.module.css';
+import Loading from './Loading';
 
 const Proverbios = () => {
 
@@ -13,7 +14,11 @@ const Proverbios = () => {
         const fetchChapter = async () => {
             try {
                 const response = await axios.get(
-                    `https://www.abibliadigital.com.br/api/verses/nvi/pv/${today}`
+                    `https://www.abibliadigital.com.br/api/verses/nvi/pv/${today}`,  {
+                        headers: {
+                          'Access-Control-Allow-Origin': '*',
+                        }
+                    }
                 );
                 setVerses(response.data.verses);
                 console.log(response.data);
@@ -29,13 +34,13 @@ const Proverbios = () => {
     return (
         <div className={styles.container}>
             <div className={styles.backgroundImg}>
-                <h1>Capítulo de provérbios para o dia de hoje</h1>
+                <h1>Capítulo devocional dos Provérbios</h1>
                 <h2>Provérbios Capítulo {today}</h2>
             </div>
 
             <section id="versos" className={styles.textVerses}>
                 {loading ? (
-                    <p>Carregando...</p>
+                    <Loading />
                 ) : (
                     <div>
                         {verses.map((verse) => (

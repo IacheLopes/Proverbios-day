@@ -4,21 +4,16 @@ import { Link } from 'react-scroll';
 
 function Navbar() {
 
-    const scrollToSection = (id) => {
-        const section = document.getElementById(id);
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
 
     return (
         <div className={styles.navbar}>
-            <div className={styles.logo}>Provérbios Day</div>
+            <div className={styles.logo}>Provérbios Diário</div>
 
             <ul className={styles.navLinks}>
                 <li><Link to="versos" smooth={true} duration={500}>Versos</Link></li>
-                <li><a href="#!" onClick={() => scrollToSection('sobre')}>Sobre</a></li>
-                <li><a href="#!" onClick={() => scrollToSection('contato')}>Contato</a></li>
+                <li><Link to="sobre" smooth={true} duration={500}>Sobre</Link></li>
+                <li><Link to="contato" smooth={true} duration={500}>Contato</Link></li>
+                
             </ul>
         </div>
     );

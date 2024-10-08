@@ -4,6 +4,7 @@
 .container {
     background-color: white; 
     width: 75%; 
+    min-height: 400px;
     margin: 10px auto; 
     border-radius: 10px; 
     border: 2px solid white;
@@ -16,8 +17,8 @@
     width: 100%;
     height: 200px;
     border-radius: 5px;
-    background-size: cover; /* Faz a imagem cobrir a div */
-    background-position: center; /* Centraliza a imagem */
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     display:flex;
     flex-direction: column;
@@ -44,4 +45,13 @@
   .textVerses p{
     margin: 0;
     padding: 3px;
+  }
+
+  @media (max-width: 693px) {
+    .backgroundImg h1{
+      font-size: 20px;
+    }
+    .backgroundImg h2{
+      font-size: 13px;
+    }
   }
