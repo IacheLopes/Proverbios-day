@@ -54,4 +54,9 @@
     .backgroundImg h2{
       font-size: 13px;
     }
+
+    .backgroundImg h1,h2{
+      
+      padding-left: 5px;
+    }
   }
