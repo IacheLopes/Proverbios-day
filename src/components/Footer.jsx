@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
-                <p>&copy; {new Date().getFullYear()} Provérbios Day. Todos os direitos reservados.</p>
+                <p>&copy; {new Date().getFullYear()} Provérbios Diário. Todos os direitos reservados.</p>
                 <ul className={styles.socialLinks}>
                     <li><a href="https://www.linkedin.com/in/iache-lopes-cavalcanti/" target="_blank" rel="noopener noreferrer"><div id="contato" className={styles.linkedin}></div></a></li>
                     <li><a href="https://github.com/IacheLopes" target="_blank" rel="noopener noreferrer"><div id="sobre" className={styles.github}></div></a></li>
