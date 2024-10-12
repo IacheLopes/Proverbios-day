@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import styles from './proverbios.module.css';
 import Loading from './Loading';
-import Ads from "./ads";
+
 
 const Proverbios = () => {
 
@@ -32,29 +32,39 @@ const Proverbios = () => {
         fetchChapter();
     }, [today]);
 
+    const atOptions = {
+		'key' : 'fb8532d3c718f6663cd8d4889e3d6478',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+
     return (
         <>
-        <Ads />
-        <div className={styles.container}>
-            <div className={styles.backgroundImg}>
-                <h1>Capítulo devocional dos Provérbios</h1>
-                <h2>Provérbios Capítulo {today}</h2>
+    	    <div>
+                {atOptions}
             </div>
+            <div className={styles.container}>
+                <div className={styles.backgroundImg}>
+                    <h1>Capítulo devocional dos Provérbios</h1>
+                    <h2>Provérbios Capítulo {today}</h2>
+                </div>
 
-            <section id="versos" className={styles.textVerses}>
-                {loading ? (
-                    <Loading />
-                ) : (
-                    <div>
-                        {verses.map((verse) => (
-                            <p key={verse.number}>
-                                <sup><strong>{verse.number}</strong></sup> {verse.text}
-                            </p>
-                        ))}
-                    </div>
-                )}
-            </section>
-        </div>
+                <section id="versos" className={styles.textVerses}>
+                    {loading ? (
+                        <Loading />
+                    ) : (
+                        <div>
+                            {verses.map((verse) => (
+                                <p key={verse.number}>
+                                    <sup><strong>{verse.number}</strong></sup> {verse.text}
+                                </p>
+                            ))}
+                        </div>
+                    )}
+                </section>
+            </div>
         </>
     );
 };
