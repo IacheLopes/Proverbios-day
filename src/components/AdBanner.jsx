@@ -32,7 +32,8 @@ const AdBanner = () => {
     };
   }, []);
 
-  return <div ref={adRef} />;
+  return <div style={{display: 'flex', justifyContent: 'center'
+  }} ref={adRef} />;
 };
 
 export default AdBanner;
