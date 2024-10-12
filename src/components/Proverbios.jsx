@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import styles from './proverbios.module.css';
 import Loading from './Loading';
+import Ads from "./ads";
 
 const Proverbios = () => {
 
@@ -32,6 +33,8 @@ const Proverbios = () => {
     }, [today]);
 
     return (
+        <>
+        <Ads />
         <div className={styles.container}>
             <div className={styles.backgroundImg}>
                 <h1>Capítulo devocional dos Provérbios</h1>
@@ -52,6 +55,7 @@ const Proverbios = () => {
                 )}
             </section>
         </div>
+        </>
     );
 };
 
