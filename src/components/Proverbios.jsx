@@ -32,19 +32,9 @@ const Proverbios = () => {
         fetchChapter();
     }, [today]);
 
-    const atOptions = {
-		'key' : 'fb8532d3c718f6663cd8d4889e3d6478',
-		'format' : 'iframe',
-		'height' : 90,
-		'width' : 728,
-		'params' : {}
-	};
 
     return (
         <>
-    	    <div>
-                {atOptions}
-            </div>
             <div className={styles.container}>
                 <div className={styles.backgroundImg}>
                     <h1>Capítulo devocional dos Provérbios</h1>

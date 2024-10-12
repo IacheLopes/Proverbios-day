@@ -1,6 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
-const Ads = () => {
+const AdBanner = () => {
+  const adRef = useRef(null);
+
   useEffect(() => {
     const script1 = document.createElement('script');
     script1.type = 'text/javascript';
@@ -13,20 +15,24 @@ const Ads = () => {
         'params': {}
       };
     `;
+
     const script2 = document.createElement('script');
     script2.type = 'text/javascript';
     script2.src = '//www.topcpmcreativeformat.com/fb8532d3c718f6663cd8d4889e3d6478/invoke.js';
 
-    document.body.appendChild(script1);
-    document.body.appendChild(script2);
+    if (adRef.current) {
+      adRef.current.appendChild(script1);
+      adRef.current.appendChild(script2);
+    }
 
     return () => {
-      document.body.removeChild(script1);
-      document.body.removeChild(script2);
+      if (adRef.current) {
+        adRef.current.innerHTML = '';
+      }
     };
   }, []);
 
-  return <div id="ad-banner" />;
+  return <div ref={adRef} />;
 };
 
-export default Ads;
+export default AdBanner;
