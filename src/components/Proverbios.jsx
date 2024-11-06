@@ -1,38 +1,15 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 import styles from './proverbios.module.css';
-import Loading from './Loading';
-
+import verse from './proverbios.json';
 
 const Proverbios = () => {
-
-    const [verses, setVerses] = useState([]);
-    const [loading, setLoading] = useState(true);
-
     const today = new Date().getDate();
+    const verseFiltered = verse.filter(chapter => chapter.chapter == today);
 
-    useEffect(() => {
-        const fetchChapter = async () => {
-            try {
-                const response = await axios.get(
-                    `https://www.abibliadigital.com.br/api/verses/nvi/pv/${today}`,  {
-                        headers: {
-                          'Access-Control-Allow-Origin': '*',
-                        }
-                    }
-                );
-                setVerses(response.data.verses);
-                console.log(response.data);
-            } catch (error) {
-                console.error("Erro ao buscar o capítulo", error);
-            } finally {
-                setLoading(false);
-            }
-        };
-        fetchChapter();
-    }, [today]);
+    const formatVerse = (text) => {
+        return text.replace(/(\d+)/g,"<br /><sup><strong>$1</strong></sup>");
+    }
 
-
+    
     return (
         <>
             <div className={styles.container}>
@@ -42,17 +19,13 @@ const Proverbios = () => {
                 </div>
 
                 <section id="versos" className={styles.textVerses}>
-                    {loading ? (
-                        <Loading />
-                    ) : (
                         <div>
-                            {verses.map((verse) => (
-                                <p key={verse.number}>
-                                    <sup><strong>{verse.number}</strong></sup> {verse.text}
+                            {verseFiltered.map((verse) => (
+                                <p key={verse.chapter}  dangerouslySetInnerHTML={{__html: `${formatVerse(verse.verse)}`}}>
+                                    
                                 </p>
                             ))}
                         </div>
-                    )}
                 </section>
             </div>
         </>
