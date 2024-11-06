@@ -1,23 +1,30 @@
-# Provérbios Diário
+# **Proverbios-day**
 
-**Provérbios Diário** é uma aplicação web que exibe versículos do livro de Provérbios diariamente, de acordo com o capítulo correspondente ao dia do mês. A interface é simples e focada na leitura devocional, proporcionando uma experiência agradável e intuitiva para os usuários.
+**Proverbios-day** é uma aplicação web desenvolvida em **React** que permite aos usuários acessar os capítulos do livro de Provérbios da Bíblia de acordo com o dia, facilitando a prática de um devocional diário e rápido.
 
-## Funcionalidades
-- Navegação suave entre seções, como "Versos", "Sobre" e "Contato".
-- Exibição dos versículos do capítulo atual de Provérbios com base no dia do mês.
-- Design responsivo e otimizado para dispositivos móveis.
-- Integração com API da Bíblia Digital para exibição dos versículos.
-- Rodapé com links para redes sociais e contato.
+## **Como Funciona**
 
-## Tecnologias Utilizadas
-- **React**: Framework principal para o desenvolvimento da interface.
-- **React Router Scroll**: Para navegação suave entre as seções.
-- **CSS Modules**: Estilização modular para garantir o escopo dos estilos.
-- **Axios**: Para realizar as requisições à API da Bíblia Digital.
-- **JavaScript ES6**: Para manipulação dos componentes e dados.
+A aplicação exibe os versículos de Provérbios de acordo com a data atual. Cada versículo é mostrado de maneira clara e intuitiva, com um design simples e funcional, visando uma experiência agradável e prática para o usuário.
 
-## Visualize
+## **Funcionalidades**
 
-- **Link**: https://proverbiosdiario.iache.tech
+- Exibe o capítulo de Provérbios correspondente ao dia atual (por exemplo, no dia 06/11, o capítulo exibido será o Capítulo 6).
+- Cada versículo é apresentado de maneira clara e legível.
+- Armazenamento dos dados localmente, utilizando um arquivo **JSON**, garantindo a continuidade do funcionamento do site sem depender de uma API externa, evitando falhas futuras.
+
+## **Tecnologias Utilizadas**
+
+- **React**: Framework utilizado para a construção da interface do usuário.
+- **Vite**: Ferramenta de build rápida que otimiza o processo de desenvolvimento.
+- **JSON**: Armazenamento local dos dados dos capítulos de Provérbios.
 
 
+## **Aprendizados e Soluções**
+
+Durante o desenvolvimento, a aplicação inicialmente dependia de uma API externa para carregar os capítulos de Provérbios. No entanto, ao tentar publicar o projeto, a API deixou de funcionar. Para contornar esse problema, optei por armazenar os dados localmente em um arquivo **JSON**, garantindo que a aplicação funcione sem dependência de APIs externas, evitando falhas futuras.
+
+
+## **Links Úteis**
+
+- **Site no ar**: [proverbios.iache.tech](https://proverbios.iache.tech)
+- **Repositório GitHub**: [github.com/IacheLopes/Proverbios-day](https://github.com/IacheLopes/Proverbios-day)
